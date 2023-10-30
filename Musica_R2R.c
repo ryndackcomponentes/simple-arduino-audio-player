@@ -4,7 +4,7 @@
 #include <avr/interrupt.h>
 #include "Pontos.h"
 
-int i=0, Min=250;
+int i=0, Min=130;
 
 ISR(TIMER0_OVF_vect){							//Interrupção quando há um estouro do timer0.
 
@@ -12,7 +12,7 @@ ISR(TIMER0_OVF_vect){							//Interrupção quando há um estouro do timer0.
 
 	PORTD = pgm_read_byte_near(pontos + i);		//Manda vetor com o audio para a saida.
 	
-	if(i>998){				 				//incrmenta o vetor com o audio.
+	if(i>30998){				 				//incrmenta o vetor com o audio.
 		i =  0;
 	}
 	else{
