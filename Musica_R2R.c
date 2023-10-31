@@ -10,9 +10,9 @@ ISR(TIMER0_OVF_vect){							//Interrupção quando há um estouro do timer0.
 
 	TCNT0   = Min;								//Reinicia o timer0.
 
-	PORTD = pgm_read_byte_near(pontos + i);		//Manda vetor com o audio para a saida.
+	PORTD = pgm_read_byte_near(pontos + i);		//Manda o valor da posição i do vetor com o audio para o PORTD.
 	
-	if(i>30998){				 				//incrmenta o vetor com o audio.
+	if(i>30998){				 				//incrementa a posição do vetor com o audio.
 		i =  0;
 	}
 	else{
